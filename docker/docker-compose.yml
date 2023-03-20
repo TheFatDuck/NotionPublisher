@@ -1,0 +1,7 @@
+version: '3'
+services:
+  redmineworker:
+    image: smoh92/redmineworker:0.0.1
+    volumes:
+      - ./appsettings.json:/app/appsettings.json
+      - ./rw-logs:/app/logs
