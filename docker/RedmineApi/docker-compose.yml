@@ -1,7 +1,9 @@
 version: '3'
 services:
   redmineworker:
-    image: smoh92/redmineworker:0.0.1
+    image: smoh92/redmineapi:latest
     volumes:
       - ./appsettings.json:/app/appsettings.json
-      - ./rw-logs:/app/logs
+      - ./logs:/app/logs
+    ports:
+      - "8080:80"
