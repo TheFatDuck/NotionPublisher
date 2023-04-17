@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedmineLoader", "RedmineLoader\RedmineLoader.csproj", "{1A91C09F-A9DA-4066-A8DF-DABDDC49B8FE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.Common", "Lib.Common\Lib.Common.csproj", "{D550412F-8C93-4530-B509-2D004BA45731}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedmineApi", "RedmineApi\RedmineApi.csproj", "{B5562A26-50A9-448C-9BA4-DD6965155243}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedminePublisher", "RedminePublisher\RedminePublisher.csproj", "{51FEBF67-8181-4051-9FD2-66C968B10759}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A91C09F-A9DA-4066-A8DF-DABDDC49B8FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A91C09F-A9DA-4066-A8DF-DABDDC49B8FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A91C09F-A9DA-4066-A8DF-DABDDC49B8FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A91C09F-A9DA-4066-A8DF-DABDDC49B8FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D550412F-8C93-4530-B509-2D004BA45731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D550412F-8C93-4530-B509-2D004BA45731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D550412F-8C93-4530-B509-2D004BA45731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D550412F-8C93-4530-B509-2D004BA45731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5562A26-50A9-448C-9BA4-DD6965155243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5562A26-50A9-448C-9BA4-DD6965155243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5562A26-50A9-448C-9BA4-DD6965155243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5562A26-50A9-448C-9BA4-DD6965155243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51FEBF67-8181-4051-9FD2-66C968B10759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51FEBF67-8181-4051-9FD2-66C968B10759}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51FEBF67-8181-4051-9FD2-66C968B10759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51FEBF67-8181-4051-9FD2-66C968B10759}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C54D8205-94DA-4C78-8DDA-1ACE66F1E924}
+	EndGlobalSection
+EndGlobal
