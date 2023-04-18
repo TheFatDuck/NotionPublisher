@@ -1,0 +1,7 @@
+version: '3'
+services:
+  redmineworker:
+    image: np-rm-ldr:latest
+    volumes:
+      - ./appsettings.json:/app/appsettings.json
+      - ./logs:/app/logs

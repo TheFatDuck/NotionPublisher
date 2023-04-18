@@ -1,0 +1,9 @@
+version: '3'
+services:
+  redmineworker:
+    image: np-rm-api:latest
+    volumes:
+      - ./appsettings.json:/app/appsettings.json
+      - ./logs:/app/logs
+    ports:
+      - "5080:80"
