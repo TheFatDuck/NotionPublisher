@@ -6,6 +6,9 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
+COPY ["Lib.Common/Lib.Common.csproj", "Lib.Common/"]
+RUN dotnet restore "Lib.Common/Lib.Common.csproj"
+COPY . .
 COPY ["RedmineApi/RedmineApi.csproj", "RedmineApi/"]
 RUN dotnet restore "RedmineApi/RedmineApi.csproj"
 COPY . .
