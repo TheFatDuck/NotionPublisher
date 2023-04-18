@@ -27,13 +27,3 @@ set ntpub_dodckerfile=.\jenkins\RedminePublisherDockerFile
 copy /y "%npapi_dodckerfile%" "%npapi_rel_dir%\Dockerfile"
 copy /y "%rmlder_dodckerfile%" "%rmlder_rel_dir%\Dockerfile"
 copy /y "%ntpub_dodckerfile%" "%ntpub_rel_dir%\Dockerfile"
-rem ------------------------------------
-rem Build docker containers.
-echo Building docker containers...
-set container_tag=latest
-set npapi_image=np-api
-set rmlder_image=np-issueloader
-set ntpub_image=np-issuepublisher
-docker build -t "%npapi_image%:%container_tag%" -f "%npapi_rel_dir%\Dockerfile" .
-docker build -t "%rmlder_image%:%container_tag%" -f "%rmlder_rel_dir%\Dockerfile" .
-docker build -t "%ntpub_image%:%container_tag%" -f "%ntpub_rel_dir%\Dockerfile" .
