@@ -5,6 +5,10 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
+COPY ["Lib.Common/Lib.Common.csproj", "Lib.Common/"]
+RUN dotnet restore "Lib.Common/Lib.Common.csproj"
+COPY . .
+RUN dotnet build "./Lib.Common/Lib.Common.csproj" -c Release -o /app/build
 COPY ["RedmineLoader/RedmineLoader.csproj", "RedmineLoader/"]
 RUN dotnet restore "RedmineLoader/RedmineLoader.csproj"
 COPY . .

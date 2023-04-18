@@ -9,6 +9,7 @@ WORKDIR /src
 COPY ["Lib.Common/Lib.Common.csproj", "Lib.Common/"]
 RUN dotnet restore "Lib.Common/Lib.Common.csproj"
 COPY . .
+RUN dotnet build "./Lib.Common/Lib.Common.csproj" -c Release -o /app/build
 COPY ["RedmineApi/RedmineApi.csproj", "RedmineApi/"]
 RUN dotnet restore "RedmineApi/RedmineApi.csproj"
 COPY . .
