@@ -181,7 +181,7 @@ namespace RedmineLoader
                                 }
                                 else
                                 {
-                                    // TODO: Handle error
+                                    _logger.Error("{error}: {req_url} {message}", response.StatusCode.ToString(), reqUri, $"SendAsync failed.");
                                     issues.Clear();
                                     return issues;
                                 }
@@ -189,7 +189,13 @@ namespace RedmineLoader
                         }
                         catch (TaskCanceledException e)
                         {
-                            // TODO: Handle error.
+                            _logger.Error("{error}: {message}", e.GetType().Name, e.Message);
+                            issues.Clear();
+                            return issues;
+                        }
+                        catch(Exception e)
+                        {
+                            _logger.Error("{error}: {message}", e.GetType().Name, e.Message);
                             issues.Clear();
                             return issues;
                         }
