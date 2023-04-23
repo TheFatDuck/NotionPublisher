@@ -27,3 +27,14 @@ set ntpub_dodckerfile=.\jenkins\RedminePublisherDockerFile
 copy /y "%npapi_dodckerfile%" "%npapi_rel_dir%\Dockerfile"
 copy /y "%rmlder_dodckerfile%" "%rmlder_rel_dir%\Dockerfile"
 copy /y "%ntpub_dodckerfile%" "%ntpub_rel_dir%\Dockerfile"
+rem ------------------------------------
+rem Update docker tags.
+echo Updating version...
+set versionfile=NotionPublisher.version
+for /f "tokens=1-2 delims=." %%a in ('type "%versionfile%"') do (
+    set major=%%a
+    set minor=%%b
+)
+for /f "usebackq" %%i in (`git rev-list --count HEAD`) do set count=%%i
+echo Updated version %major%.%minor%.%count%
+echo %major%.%minor%.%count% > %versionfile%
