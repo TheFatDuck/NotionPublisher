@@ -9,7 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.Common", "Lib.Common\Li
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedmineApi", "RedmineApi\RedmineApi.csproj", "{B5562A26-50A9-448C-9BA4-DD6965155243}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedminePublisher", "RedminePublisher\RedminePublisher.csproj", "{51FEBF67-8181-4051-9FD2-66C968B10759}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedminePublisher", "RedminePublisher\RedminePublisher.csproj", "{51FEBF67-8181-4051-9FD2-66C968B10759}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "솔루션 항목", "솔루션 항목", "{FBEEE143-44BA-400F-8079-2C6B24F584E6}"
+	ProjectSection(SolutionItems) = preProject
+		NotionPublisher.version = NotionPublisher.version
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
