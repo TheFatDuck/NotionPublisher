@@ -44,7 +44,7 @@ namespace RedmineApi
             //app.UseMiddleware<ApiKeyMiddleware>(); // Custom middleware for api key auth.
 
             // Add swagger if degug.
-            if (app.Environment.IsDevelopment())
+            if (string.Equals(configuration[Consts.ENV_NAME_ALLOWED_HOSTS], "TRUE"))
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
@@ -135,6 +135,13 @@ namespace RedmineApi
             string allowedHosts = configuration["Auth:AllowedHosts"];
             if (!string.IsNullOrWhiteSpace(allowedHosts))
                 configuration[Consts.ENV_NAME_ALLOWED_HOSTS] = allowedHosts;
+
+            string enableSwagger = configuration["Swagger"];
+            if (!string.IsNullOrWhiteSpace(enableSwagger))
+                configuration[Consts.ENV_NAME_ALLOWED_HOSTS] = enableSwagger.ToUpper();
+#if DEBUG
+            configuration[Consts.ENV_NAME_ALLOWED_HOSTS] = "TRUE";
+#endif
 
             return configuration;
         }

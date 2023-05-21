@@ -15,6 +15,7 @@ namespace RedmineApi.Data
         public static readonly string ENV_NAME_PG_PASS = "POSTGRES_PASS";
         public static readonly string ENV_NAME_PG_CLEAN = "POSTGRES_CLEAN";
         public static readonly string ENV_NAME_ALLOWED_HOSTS = "ALLOWED_HOSTS";
+        public static readonly string ENV_NAME_ENABLE_SWAGGER = "ENABLE_SWAGGER";
 
         public static bool IsDbInitialized = false;
         public static readonly int DB_DEFAULT_USER_KEY = 1;
