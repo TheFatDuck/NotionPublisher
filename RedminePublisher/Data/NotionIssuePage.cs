@@ -65,7 +65,7 @@ namespace RedminePublisher.Data
                         ""title"": [
                             {{
                                 ""type"": ""text"",
-                                ""text"": {{ ""content"": ""#{this.issueDao.issue_id} {this.issueDao.title.Replace("\"", "\\\"").Replace("\\", "\\\\")}"" }}
+                                ""text"": {{ ""content"": ""#{this.issueDao.issue_id} {this.issueDao.title.Replace("\\", "\\\\").Replace("\"", "\\\"")}"" }}
                             }}
                         ]
                     }}
