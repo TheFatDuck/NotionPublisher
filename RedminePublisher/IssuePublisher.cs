@@ -100,7 +100,7 @@ namespace RedminePublisher
                     }
                     else
                     {
-                        //TODO: Handle error.
+                        throw new Exception($"Failed to CreatePage. {response.ReasonPhrase}({response.StatusCode})");
                     }
                 }
                 catch (Exception ex)
