@@ -2,12 +2,12 @@
 Get the necessary information and create a new page in Notion DB.
   
 ## Development environments
->IDE: Microsoft Visual Studio Community 2022 (64-bit) ver. 17.5.4
->SDK: .Net 6.0.100 LTS
->Docker: Docker Desktop for Windows v4.19.0
->Notion: NotionAPI version '2022-06-28'
->Redmine: v4.2.10
->PostgreSQL: 15.2-1.pgdg110+1  
+* IDE: Microsoft Visual Studio Community 2022 (64-bit) ver. 17.5.4
+* SDK: .Net 6.0.100 LTS
+* Docker: Docker Desktop for Windows v4.19.0
+* Notion: NotionAPI version '2022-06-28'
+* Redmine: v4.2.10
+* PostgreSQL: 15.2-1.pgdg110+1  
 
 ## Projects
 
