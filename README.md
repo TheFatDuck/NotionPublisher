@@ -10,12 +10,13 @@ Get the necessary information and create a new page in Notion DB.
 * PostgreSQL: 15.2-1.pgdg110+1  
 
 ## Projects
-
 ### RedmineApi
 Central management API. A project that stores information that requires various services and performs DB work.
-
 ### RedmineLoader
 Import issue information from Redmine and save issue information to DB through RedmineApi.
-
 ### RedminePublisher
 Import updated issues through RedmineApi and create NotionPage information. After that, NotionAPI is called to create or update the page.
+
+## References
+### Notion sample DB
+> https://bit.ly/42dPhVJ
