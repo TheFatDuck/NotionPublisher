@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lib.Common.Data.DAO
 {
-    public class ConfigDao
+    public class ConfigDto
     {
         public string entry { get; set; }
         public string value { get; set; }

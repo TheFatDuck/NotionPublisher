@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Lib.Common.Data.DAO
 {
-    public class PageDao
+    public class PageDto
     {
         public string page_id { get; set; }
         public int user_id { get; set; }
         public int issue_id { get; set; }
-        public PageDao()
+        public PageDto()
         {
 
         }

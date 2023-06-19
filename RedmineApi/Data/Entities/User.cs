@@ -44,7 +44,7 @@ namespace RedmineApi.Data.Entities
         public ICollection<Page> pages { get; set; }
 
         public User() { }
-        public User(UserDao userDao)
+        public User(UserDto userDao)
         {
             this.np_api_key = userDao.np_api_key;
             this.rm_api_key = userDao.rm_api_key;

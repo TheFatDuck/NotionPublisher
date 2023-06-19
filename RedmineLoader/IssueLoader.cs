@@ -215,7 +215,7 @@ namespace RedmineLoader
                 using (var reqMsg = new HttpRequestMessage(HttpMethod.Put, reqUrl))
                 {
                     reqMsg.Headers.Add(CommonConsts.NAME_REQ_HEADER_NP_API_KEY, _npApiKey);
-                    string serializedIssueDao = JsonSerializer.Serialize(issue.ConvertToDao());
+                    string serializedIssueDao = JsonSerializer.Serialize(issue.ConvertToDto());
                     reqMsg.Content = new StringContent(serializedIssueDao, Encoding.UTF8, "application/json");
                     using (var client = new HttpClient())
                     {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lib.Common.Data.DAO
 {
-    public class IssueDao
+    public class IssueDto
     {
         public int issue_id { get; set; }
         public int project_id { get; set; }
@@ -21,6 +21,6 @@ namespace Lib.Common.Data.DAO
         public string title { get; set; }
         public DateTime created_on { get; set; }
         public DateTime updated_on { get; set; }
-        public IssueDao() { }
+        public IssueDto() { }
     }
 }

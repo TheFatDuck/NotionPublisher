@@ -42,16 +42,16 @@ namespace RedmineApi.Data.Entities
             this.issue = issue;
             this.issue_id = issue_id;
         }
-        public Page(PageDao pageDao)
+        public Page(PageDto pageDao)
         {
             this.page_id = pageDao.page_id;
             this.user_id = pageDao.user_id;
             this.issue_id = pageDao.issue_id;
         }
 
-        public PageDao ConvertToDao()
+        public PageDto ConvertToDto()
         {
-            return new PageDao()
+            return new PageDto()
             {
                 page_id = this.page_id,
                 user_id = this.user_id,

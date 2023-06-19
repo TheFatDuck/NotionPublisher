@@ -34,7 +34,7 @@ namespace RedmineApi.Services
         {
             return repoPostgres.SelectUserByKey(npApiKey);
         }
-        public User RegisterUser(UserDao userDao)
+        public User RegisterUser(UserDto userDao)
         {
             return repoPostgres.RegisterUser(userDao);
         }

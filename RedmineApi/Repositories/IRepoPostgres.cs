@@ -11,7 +11,7 @@ namespace RedmineApi.Repositories
     public interface IRepoPostgres
     {
         User SelectUserByKey(string userApiKey);
-        User RegisterUser(UserDao userDao);
+        User RegisterUser(UserDto userDao);
 
 
         Config SelectConfig(int userId, string entry);

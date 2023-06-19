@@ -48,7 +48,7 @@ namespace RedmineApi.Controllers
 
         // PUT api/issue
         [HttpPut]
-        public async Task<IActionResult> Put([FromBody] IssueDao issueDao)
+        public async Task<IActionResult> Put([FromBody] IssueDto issueDao)
         {
             await _semaphore.WaitAsync();
             try
@@ -72,7 +72,7 @@ namespace RedmineApi.Controllers
             try
             {
                 List<IssuePage> issues = _dbManager.SelectIssuesForPage();
-                List<IssuePageDao> issueDaos = issues.Select(ip => ip.ConvertToDao()).ToList();
+                List<IssuePageDto> issueDaos = issues.Select(ip => ip.ConvertToDto()).ToList();
                 return Ok(issueDaos);
             }
             finally
@@ -82,7 +82,7 @@ namespace RedmineApi.Controllers
         }
         // PUT api/issue/updated
         [HttpPut("updated")]
-        public async Task<IActionResult> PutUpdatedIssuePage([FromBody] IssuePageDao issuePageDao)
+        public async Task<IActionResult> PutUpdatedIssuePage([FromBody] IssuePageDto issuePageDao)
         {
 
             await _semaphore.WaitAsync();

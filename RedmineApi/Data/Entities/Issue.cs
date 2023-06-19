@@ -131,7 +131,7 @@ namespace RedmineApi.Data.Entities
         public ICollection<Page> pages { get; set; }
 
         public Issue() { }
-        public Issue(IssueDao issueDao)
+        public Issue(IssueDto issueDao)
         {
             this.issue_id = issueDao.issue_id;
             this.project_id = issueDao.project_id;
@@ -169,9 +169,9 @@ namespace RedmineApi.Data.Entities
             return false;
         }
 
-        public IssueDao ConvertToDao()
+        public IssueDto ConvertToDto()
         {
-            return new IssueDao
+            return new IssueDto
             {
                 issue_id = this.issue_id,
                 project_id = this.project_id,

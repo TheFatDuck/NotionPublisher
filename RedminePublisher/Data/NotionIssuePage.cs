@@ -5,7 +5,7 @@ namespace RedminePublisher.Data
     public class NotionIssuePage
     {
         public string DatabaseId { get; set; }
-        public IssueDao issueDao { get; set; }
+        public IssueDto issueDao { get; set; }
         public string ConvertToNotionJson()
         {
             string jsonProperties = @$"
@@ -73,7 +73,7 @@ namespace RedminePublisher.Data
             }}";
             return jsonProperties;
         }
-        public NotionIssuePage(string databseId, IssueDao issueDao)
+        public NotionIssuePage(string databseId, IssueDto issueDao)
         {
             DatabaseId = databseId;
             this.issueDao = issueDao;

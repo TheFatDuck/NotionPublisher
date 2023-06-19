@@ -22,7 +22,7 @@ namespace RedmineApi.Controllers
         }
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] UserDao userDao)
+        public IActionResult Login([FromBody] UserDto userDao)
         {
             if(string.IsNullOrEmpty(userDao.np_api_key))
                 return BadRequest("No api key.");
@@ -33,7 +33,7 @@ namespace RedmineApi.Controllers
                 List<Project> projects = _dbManager.SelectUserProjects(user.user_id);
                 if (projects == null || projects.Count == 0)
                     return BadRequest("No projects found.");
-                UserDao foundUserDao = new UserDao() {
+                UserDto foundUserDao = new UserDto() {
                     user_id = user.user_id,
                     np_api_key = user.np_api_key,
                     rm_api_key = user.rm_api_key,
@@ -48,7 +48,7 @@ namespace RedmineApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult RegisterUser([FromBody] UserDao userDao)
+        public IActionResult RegisterUser([FromBody] UserDto userDao)
         {
             if (_dbManager.SelectUser(userDao.np_api_key) != null)
                 return BadRequest("Already exists user.");

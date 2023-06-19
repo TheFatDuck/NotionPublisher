@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lib.Common.Data.DAO
 {
-    public class UserDao
+    public class UserDto
     {
         public int user_id { get; set; }
         public string np_api_key { get; set; }
@@ -14,8 +14,8 @@ namespace Lib.Common.Data.DAO
         public string nt_api_key { get; set; }
         public string nt_db_id { get; set; }
         public List<int> project_keys { get; set; }
-        public UserDao() { }
-        public UserDao(string npApiKey)
+        public UserDto() { }
+        public UserDto(string npApiKey)
         {
             user_id = 0;
             np_api_key = npApiKey;

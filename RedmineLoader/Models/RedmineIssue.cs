@@ -31,9 +31,9 @@ namespace RedmineWorker.Models
         public DateTime created_on { get; set; }
         public DateTime updated_on { get; set; }
         public object closed_on { get; set; }
-        public IssueDao ConvertToDao()
+        public IssueDto ConvertToDto()
         {
-            IssueDao issueDao =  new IssueDao()
+            IssueDto issueDao =  new IssueDto()
             {
                 issue_id = id,
                 project_id = project.id,

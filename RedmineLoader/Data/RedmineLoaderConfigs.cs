@@ -39,7 +39,7 @@ namespace RedmineLoader.Data
             }
         }
         public string NpApiKey { get; set; }
-        public UserDao UserInfo { get; set; }
+        public UserDto UserInfo { get; set; }
 
         public RedmineLoaderConfigs(string esUrl, string esUser, string esPass,
             string rmUrl, string npApiUrl, string npApiKey) : base(esUrl, esUser, esPass)

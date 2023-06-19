@@ -18,7 +18,7 @@ namespace RedminePublisher.Data
         }
         public string NpApiKey { get; set; }
         public string NotionApiVersion { get; set; }
-        public UserDao UserInfo { get; set; }
+        public UserDto UserInfo { get; set; }
 
         public RedminePublisherConfigs(string esUrl, string esUser, string esPass,
             string npApiUrl, string npApiKey,string notionApiVersion) : base(esUrl, esUser, esPass)

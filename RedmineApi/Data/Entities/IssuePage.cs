@@ -14,12 +14,12 @@ namespace RedmineApi.Data.Entities
             this.page = page;
         }
 
-        public IssuePageDao ConvertToDao()
+        public IssuePageDto ConvertToDto()
         {
-            return new IssuePageDao()
+            return new IssuePageDto()
             {
-                issueDao = issue.ConvertToDao(),
-                pageDao = (page != null) ? page.ConvertToDao() : null
+                issueDao = issue.ConvertToDto(),
+                pageDao = (page != null) ? page.ConvertToDto() : null
             };
         }
     }

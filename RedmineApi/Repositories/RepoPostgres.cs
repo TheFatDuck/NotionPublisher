@@ -46,7 +46,7 @@ namespace RedmineApi.Repositories
             _logger.Debug("{db_operation} is executed: {result}", "SelectUserByKey", user == null ? 0 : user.user_id);
             return user;
         }
-        public User RegisterUser(UserDao userDao)
+        public User RegisterUser(UserDto userDao)
         {
             if(string.IsNullOrEmpty(userDao.np_api_key))
                 userDao.np_api_key = Guid.NewGuid().ToString();

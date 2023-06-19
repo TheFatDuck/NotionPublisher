@@ -40,7 +40,7 @@ namespace RedmineApi.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> PutConfig([FromBody] ConfigDao configDao)
+        public async Task<IActionResult> PutConfig([FromBody] ConfigDto configDao)
         {
             Config config = new Config(configDao);
             if (!_dbManager.UpsertConfig(config))

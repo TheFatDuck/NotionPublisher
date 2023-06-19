@@ -139,7 +139,7 @@ namespace RedminePublisher
         }
         private static bool CheckApiConnection(ref RedminePublisherConfigs configs)
         {
-            UserDao userDao = null;
+            UserDto userDao = null;
             // Try to connect to NP API.
             using (var client = new HttpClient())
             {
@@ -147,13 +147,13 @@ namespace RedminePublisher
                 using (var reqMsg = new HttpRequestMessage(HttpMethod.Post, $"{configs.NpApiUrl}api/user/login"))
                 {
                     reqMsg.Headers.Add(CommonConsts.NAME_REQ_HEADER_NP_API_KEY, configs.NpApiKey);
-                    string serializedUserDao = JsonSerializer.Serialize(new UserDao(configs.NpApiKey));
+                    string serializedUserDao = JsonSerializer.Serialize(new UserDto(configs.NpApiKey));
                     reqMsg.Content = new StringContent(serializedUserDao, Encoding.UTF8, "application/json");
 
                     var response = client.Send(reqMsg, CancellationToken.None);
                     if (response.IsSuccessStatusCode)
                     {
-                        userDao = JsonSerializer.Deserialize<UserDao>(response.Content.ReadAsStringAsync().Result);
+                        userDao = JsonSerializer.Deserialize<UserDto>(response.Content.ReadAsStringAsync().Result);
                         if (userDao.project_keys.Count() == 0)
                         {
                             Log.Logger.Error("Failed to get projects.");

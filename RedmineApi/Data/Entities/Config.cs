@@ -30,7 +30,7 @@ namespace RedmineApi.Data.Entities
             this.entry = entry;
             this.value = value;
         }
-        public Config(ConfigDao configDao)
+        public Config(ConfigDto configDao)
         {
             user_id = Convert.ToInt32(configDao.user_id);
             entry = configDao.entry;
