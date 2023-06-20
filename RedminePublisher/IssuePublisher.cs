@@ -40,11 +40,11 @@ namespace RedminePublisher
         }
         private void PublishIssues()
         {
-            List<IssuePageDao> issues = GetIssuesForPublish();
+            List<IssuePageDto> issues = GetIssuesForPublish();
             // Notion api does not support endpoints for creating multiple pages at once.
-            foreach (IssuePageDao issuePageDao in issues)
+            foreach (IssuePageDto issuePageDao in issues)
             {
-                IssuePageDao updatedDao = (issuePageDao.pageDao == null) ? CreatePage(issuePageDao) : UpdatePage(issuePageDao);
+                IssuePageDto updatedDao = (issuePageDao.pageDao == null) ? CreatePage(issuePageDao) : UpdatePage(issuePageDao);
                 if(updatedDao != null)
                 {
                     updatedDao.pageDao.user_id = _userId;
@@ -52,9 +52,9 @@ namespace RedminePublisher
                 }
             }
         }
-        private List<IssuePageDao> GetIssuesForPublish()
+        private List<IssuePageDto> GetIssuesForPublish()
         {
-            List<IssuePageDao> issuePageDaos = new List<IssuePageDao>();
+            List<IssuePageDto> issuePageDaos = new List<IssuePageDto>();
 
             using (var reqMsg = new HttpRequestMessage(HttpMethod.Get, $"{_npApiUrl}api/issue/updated"))
             {
@@ -66,14 +66,14 @@ namespace RedminePublisher
                     if (response.IsSuccessStatusCode)
                     {
                         var content = response.Content.ReadAsStringAsync().Result;
-                        issuePageDaos = JsonSerializer.Deserialize<List<IssuePageDao>>(content);
+                        issuePageDaos = JsonSerializer.Deserialize<List<IssuePageDto>>(content);
                     }
                 }
             }
 
             return issuePageDaos;
         }
-        private IssuePageDao CreatePage(IssuePageDao issuePageDao)
+        private IssuePageDto CreatePage(IssuePageDto issuePageDao)
         {
             using (var client = new HttpClient())
             {
@@ -91,7 +91,7 @@ namespace RedminePublisher
                     {
                         var content = response.Content.ReadAsStringAsync().Result;
                         NotionCreatePageResponse noionCreatePageResponse = JsonSerializer.Deserialize<NotionCreatePageResponse>(content);
-                        PageDao pageDao = new PageDao() 
+                        PageDto pageDao = new PageDto() 
                         {
                             page_id = noionCreatePageResponse.id,
                             issue_id = issuePageDao.issueDao.issue_id
@@ -112,7 +112,7 @@ namespace RedminePublisher
             }
             return issuePageDao;
         }
-        private IssuePageDao UpdatePage(IssuePageDao issuePageDao)
+        private IssuePageDto UpdatePage(IssuePageDto issuePageDao)
         {
             using (var client = new HttpClient())
             {
@@ -145,7 +145,7 @@ namespace RedminePublisher
             }
             return issuePageDao;
         }
-        private bool PutIssuePage(IssuePageDao issuePageDao)
+        private bool PutIssuePage(IssuePageDto issuePageDao)
         {
             using (var client = new HttpClient())
             {
