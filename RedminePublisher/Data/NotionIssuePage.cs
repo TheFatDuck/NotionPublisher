@@ -10,7 +10,7 @@ namespace RedminePublisher.Data
         {
             string jsonProperties = @$"
             {{
-	            ""parent"": {{ ""database_id"": ""{this.DatabaseId}"" }},
+                ""parent"": {{ ""database_id"": ""{this.DatabaseId}"" }},
                 ""properties"": {{
                     ""Number"": {{ ""number"": {this.issueDao.issue_id} }},
                     ""Status"": {{
@@ -65,7 +65,7 @@ namespace RedminePublisher.Data
                         ""title"": [
                             {{
                                 ""type"": ""text"",
-                                ""text"": {{ ""content"": ""#{this.issueDao.issue_id} {this.issueDao.title.Replace("\\", "\\\\").Replace("\"", "\\\"")}"" }}
+                                ""text"": {{ ""content"": ""#{this.issueDao.issue_id} {this.issueDao.title.Replace("\t", "    ").Replace("\\", "\\\\").Replace("\"", "\\\"")}"" }}
                             }}
                         ]
                     }}
